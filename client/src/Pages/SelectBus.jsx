@@ -44,7 +44,7 @@ function SelectBus() {
   async function getdata(from, to, date) {
    console.log(from, to, date);
     try {
-      let res = await axios.post("http://localhost:8080/bus/getall", {
+      let res = await axios.post("https://swami-travels-api.vercel.app/bus/getall", {
         from,
         to,
         date,
