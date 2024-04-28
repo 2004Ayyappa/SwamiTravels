@@ -27,7 +27,7 @@ function Myticket() {
 
   async function getdata(id) {
     try {
-      let res = await axios.post("http://localhost:8080/order/myticket", {
+      let res = await axios.post("https://swami-travels-api.vercel.app/order/myticket", {
         id,
       });
       // console.log(res);
@@ -46,7 +46,7 @@ function Myticket() {
   async function getdataToday() {
     let id = Cookies.get("userid");
     try {
-      let res = await axios.post("http://localhost:8080/order/myticket/today", {
+      let res = await axios.post("https://swami-travels-api.vercel.app/order/myticket/today", {
         id,
       });
       // console.log("today", res);
@@ -67,7 +67,7 @@ function Myticket() {
     let id = Cookies.get("userid");
     try {
       let res = await axios.post(
-        "http://localhost:8080/order/myticket/upcoming",
+        "https://swami-travels-api.vercel.app/order/myticket/upcoming",
         {
           id,
         }
@@ -88,7 +88,7 @@ function Myticket() {
   async function getdataPast() {
     let id = Cookies.get("userid");
     try {
-      let res = await axios.post("http://localhost:8080/order/myticket/past", {
+      let res = await axios.post("https://swami-travels-api.vercel.app/order/myticket/past", {
         id,
       });
       // console.log("past", res);
