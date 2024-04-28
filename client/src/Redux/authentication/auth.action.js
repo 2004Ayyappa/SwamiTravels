@@ -10,7 +10,7 @@ import { error, success } from "../../Utils/notification";
 export const loginAPI = (data, navigate) => async (dispatch) => {
   axios.defaults.withCredentials = true;
   try {
-    let response = await axios.post("https://swami-travels-api.vercel.app/user/login", data);
+    let response = await axios.post("https://swamitravels-bbxl.onrender.com/user/login", data);
     // console.log(response);
     if (response.data.status === "Failed") {
       error(response.data.message);
