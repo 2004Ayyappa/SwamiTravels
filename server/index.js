@@ -13,7 +13,7 @@ const connect = require("./src/configs/db");
 
 app.use(cors(
   {
-    origin:["https://deploy-mern-1whq.vercel.app"],
+    origin:["https://swami-travels-client.vercel.app"],
     methods:["POST","GET"],
     credentials:true
   }
