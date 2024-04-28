@@ -9,7 +9,7 @@ import { error, success } from "../../Utils/notification";
 
 export const loginAPI = (data, navigate) => async (dispatch) => {
   try {
-    let response = await axios.post("http://localhost:8080/admin/login", data);
+    let response = await axios.post("https://swami-travels-api.vercel.app/admin/login", data);
     // console.log(response);
     if (response.data.status === "Failed") {
       error(response.data.message);
