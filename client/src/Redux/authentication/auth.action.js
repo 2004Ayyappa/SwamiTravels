@@ -8,8 +8,9 @@ import Cookies from "js-cookie";
 import { error, success } from "../../Utils/notification";
 
 export const loginAPI = (data, navigate) => async (dispatch) => {
+  axios.defaults.withCredentials = true;
   try {
-    let response = await axios.post("http://localhost:8080/user/login", data);
+    let response = await axios.post("https://swami-travels-api.vercel.app/user/login", data);
     // console.log(response);
     if (response.data.status === "Failed") {
       error(response.data.message);
