@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 import { error, success } from "../../Utils/notification";
 
 export const loginAPI = (data, navigate) => async (dispatch) => {
-  axios.defaults.withCredentials = true;
+ 
   try {
     let response = await axios.post("https://swamitravels-bbxl.onrender.com/user/login", data);
     // console.log(response);
