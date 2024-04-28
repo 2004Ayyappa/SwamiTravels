@@ -1,0 +1,28 @@
+/* UserComponent.css */
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #eae7e7;
+  padding: 12px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f7f5f5;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.user-table td {
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .user-table th, .user-table td {
+    padding: 8px;
+  }
+}

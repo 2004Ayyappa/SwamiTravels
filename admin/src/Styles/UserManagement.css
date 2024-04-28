@@ -1,0 +1,32 @@
+/* UserManagement.css */
+
+.user-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #5a59599d;
+  padding: 12px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #ece7e7;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #6c9af6;
+}

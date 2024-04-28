@@ -1,0 +1,42 @@
+.login {
+  width: 30%;
+  margin: auto;
+  box-shadow: rgb(0 0 0 / 45%) 0px 1px 1px, rgb(0 0 0 / 45%) 0px 2px 2px,
+    rgb(0 0 0 / 48%) 0px 4px 4px, rgb(0 0 0 / 56%) 0px 8px 8px,
+    rgb(0 0 0 / 48%) 0px 16px 16px;
+  padding: 25px 15px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-image:url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjU0NmJhdGNoMy1teW50LTM0LWJhZGdld2F0ZXJjb2xvcl8xLmpwZw.jpg')
+}
+.login > div {
+  margin-bottom: 10px;
+}
+
+@media all and (min-width: 319px) and (max-width: 579px) {
+  .login {
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+@media all and (min-width: 580px) and (max-width: 900px) {
+  .login {
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+@media all and (min-width: 901px) and (max-width: 1019px) {
+  .login {
+    width: 40%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}

@@ -1,0 +1,40 @@
+/* CityManagement.css */
+
+.city-management {
+    padding: 20px;
+  }
+  
+  .city-table {
+    width: 80%;
+    border-collapse: collapse;
+  }
+  
+  .city-table th, .city-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .city-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .city-table th, .city-table td, .city-table button {
+    font-size: 14px;
+  }
+  
+  .city-table button {
+    background-color: #f44336;
+    color: #fff;
+    padding: 6px 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .city-table button:hover {
+    background-color: #6c9af6;
+  }
+  
