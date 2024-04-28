@@ -109,7 +109,7 @@ function Myticket() {
     let userid1 = Cookies.get("userid");
     try {
       let res = await axios.delete(
-        `http://localhost:8080/order/oneorder/:${userid}`
+        `https://swami-travels-api.vercel.app/order/oneorder/:${userid}`
       );
       getdata(userid1);
       success("Ticket Cancelled Successfully");
