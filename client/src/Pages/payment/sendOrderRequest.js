@@ -48,7 +48,7 @@ export const sendOrderRequest = async (
   };
 
   try {
-    await axios.post("http://localhost:8080/order", payload, {
+    await axios.post("https://swami-travels-api.vercel.app/order", payload, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
