@@ -10,7 +10,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 let connect = () => {
-  return mongoose.connect(process.env.MONGO_URL,
+  return mongoose.connect(process.env.MONGODB_URL,
     { useNewUrlParser: true }
   );
 };
