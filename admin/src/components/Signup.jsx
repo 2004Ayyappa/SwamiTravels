@@ -35,7 +35,7 @@ function Signup() {
     } else {
       try {
         let response = await axios.post(
-          "http://localhost:8080/admin/signup",
+          "https://swami-travels-api.vercel.app/admin/signup",
           signUpcreds
         );
         //console.log(response);
