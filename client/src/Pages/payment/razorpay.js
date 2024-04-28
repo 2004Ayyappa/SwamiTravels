@@ -38,7 +38,7 @@ export const initPayment = (
     handler: async function (response) {
       try {
         const { data } = await axios.post(
-          "https://swami-travels-api.vercel.app/api/payment/verify",
+          "https://swamitravels-bbxl.onrender.com/api/payment/verify",
           response
         );
 
