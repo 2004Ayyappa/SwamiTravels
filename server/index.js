@@ -7,13 +7,16 @@ const cityRouter = require("./src/controllers/city.controller");
 const busRouter = require("./src/controllers/bus.controller");
 const userRouter = require("./src/controllers/user.controller");
 const orderRouter = require("./src/controllers/order.controller");
-const paymentController = require('./src/controllers/payment.controller');
+const paymentController = require("./src/controllers/payment.controller");
 const connect = require("./src/configs/db");
-app.use(cors({
-  origin: ["https://swami-travels-client.vercel.app"],
-  methods: ["POST", "GET"],
-  credentials: true
-}));
+
+app.use(
+  cors({
+    origin: "https://swami-travels-client.vercel.app", // Replace with your frontend domain
+    methods: "GET, POST, PUT, DELETE",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use("/admin", adminRouter);
 app.use("/user", userRouter);
@@ -24,15 +27,11 @@ app.use("/order", orderRouter);
 // Razorpay payment
 app.use("/api/payment", paymentController);
 
-// Handle preflight requests
-app.options('*', cors());
-
 app.listen(port, async () => {
   try {
     await connect();
-    console.log(`Listening on port ${port}`);
-    console.log('Server is running');
+    console.log(`Server is running on http://localhost:${port}`);
   } catch (error) {
-    console.log(error.message);
+    console.error("Error connecting to the database:", error.message);
   }
 });
