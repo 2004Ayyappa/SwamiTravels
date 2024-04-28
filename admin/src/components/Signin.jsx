@@ -28,7 +28,7 @@ function Signin() {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:8080/admin/login",
+          "https://swami-travels-api.vercel.app/admin/login",
           signInCreds
         );
         if (response.data.status === "Failed") {
