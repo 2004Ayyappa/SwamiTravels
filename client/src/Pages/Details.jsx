@@ -79,7 +79,7 @@ function Details() {
     }
 
     const { data } = await axios.post(
-      "https://swami-travels-api.vercel.app/api/payment/ticket",
+      "https://swamitravels-bbxl.onrender.com/api/payment/ticket",
       {
         amount: amount,
       }
