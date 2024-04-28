@@ -39,7 +39,16 @@ function Signin() {
           navigate("/dashboardlayout");
         }
       } catch (err) {
-        console.log(err);
+        if (err.response) {
+          // The request was made and the server responded with a status code
+          alert(`Error: ${err.response.data.message}`);
+        } else if (err.request) {
+          // The request was made but no response was received
+          alert("Network Error: Please try again later");
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          alert("Error: " + err.message);
+        }
       }
     }
   };
