@@ -14,7 +14,7 @@ const CityForm = () => {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:8080/city/addcity", {
+      const response = await axios.post("https://swamitravels-bbxl.onrender.com/city/addcity", {
         name,
         state
      
