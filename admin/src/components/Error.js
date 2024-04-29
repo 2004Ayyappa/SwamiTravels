@@ -5,7 +5,7 @@ const Error = () => {
     <>
     <center>
         <h1 style={{color: "red",fontSize:'1.8rem'}}>
-            404
+            404 Error
         </h1>
     </center>
     </>
