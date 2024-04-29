@@ -126,6 +126,7 @@ function SelectBus() {
                   <hr />
                   <h6>Arrival Time : {ele.arrival}</h6>
                   <h6>Departure Time : {ele.departure}</h6>
+                  <h6>Aminites : {ele.aminites}</h6>
                   <hr />
                   <h6>Email : {ele.email}</h6>
                   <h6>Phone : {ele.phone}</h6>
