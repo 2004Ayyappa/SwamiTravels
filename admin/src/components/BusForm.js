@@ -17,12 +17,10 @@ function BusForm() {
     departure: '',
     seats: []
   });
-
   useEffect(() => {
     fetchAllBuses();
     
   }, []);
-
   const fetchAllBuses = async () => {
     try {
       const response = await axios.post('https://swamitravels-bbxl.onrender.com/bus/getall');
@@ -35,7 +33,6 @@ function BusForm() {
       console.error('Error fetching buses:', error.message);
     }
   };
-
   const addNewBus = async () => {
     try {
       const response = await axios.post('https://swamitravels-bbxl.onrender.com/bus/addnew', newBusData);
