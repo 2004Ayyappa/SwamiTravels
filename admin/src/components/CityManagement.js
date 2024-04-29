@@ -16,7 +16,7 @@ const CityManagement = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/city");
+      const response = await axios.get("https://swamitravels-bbxl.onrender.com/city");
       setCities(response.data);
     } catch (err) {
       console.error("Error fetching cities:", err);
@@ -26,7 +26,7 @@ const CityManagement = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/city/deleteCity/${id}`);
+      await axios.delete(`https://swamitravels-bbxl.onrender.com/city/deleteCity/${id}`);
       alert("City deleted successfully");
       fetchData(); // Refresh the list of cities after deletion
     } catch (err) {
@@ -41,7 +41,7 @@ const CityManagement = () => {
       return;
     }
     try {
-      await axios.put(`http://localhost:8080/city/updateCity/${id}`, {
+      await axios.put(`https://swamitravels-bbxl.onrender.com/city/updateCity/${id}`, {
         name: updatedName,
         state: updatedState,
       });
