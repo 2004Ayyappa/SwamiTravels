@@ -12,7 +12,7 @@ function Signup() {
     password: "",
     gender: "",
   };
-  axios.defaults.withCredentials=true;
+ 
   const [signUpcreds, setsignUpcreds] = useState(initialData);
   const [showpassword, setshowpassword] = useState(false);
   const navigate = useNavigate();
