@@ -25,7 +25,7 @@ export default function SignUp() {
       event.preventDefault();
       const data = new FormData(event.currentTarget);
 
-      const response = await axios.post('http://localhost:8080/admin/adminsignup', {
+      const response = await axios.post('https://swamitravels-bbxl.onrender.com/admin/adminsignup', {
         name: data.get('name'),
         email: data.get('email'),
         password: data.get('password'),
