@@ -147,9 +147,9 @@ function BusForm() {
         <div className="form-group">
           <input
             type="text"
-            name="amenities"
-            placeholder="Amenities"
-            value={newBusData.amenities}
+            name="aminites"
+            placeholder="Aminites"
+            value={newBusData.aminites}
             onChange={handleInputChange}
             required
           />
