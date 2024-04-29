@@ -9,76 +9,63 @@ import { removeall } from "../Redux/ticket/ticket.action";
 import Filters from "../Components/Seats/Filters";
 import { useDispatch, useSelector } from "react-redux";
 import { error } from "../Utils/notification";
-
 function SelectBus() {
+  let [searchParams, setSearchParams] = useSearchParams();
   const [wentwrong, setwentwrong] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const searchParams = useSearchParams();
   const dataredux = useSelector((state) => state.filter.data);
-  const [filteredData, setFilteredData] = useState([]);
-
   useEffect(() => {
     dispatch(removeall());
   }, []);
-
   useEffect(() => {
-    const from = searchParams.get("from");
-    const to = searchParams.get("to");
-    const date = searchParams.get("date");
-    if (!from || !to || !date) {
+    let from = searchParams.get("from");
+    let to = searchParams.get("to");
+    let date = searchParams.get("date");
+    if (
+      from === "" ||
+      to === "" ||
+      date === "" ||
+      from === null ||
+      to === null ||
+      date === null ||
+      date === undefined
+    ) {
       setwentwrong(true);
     } else {
       getdata(from, to, date);
     }
   }, []);
-
-  useEffect(() => {
-    // Apply filters whenever filter data or bus data changes
-    applyFilters();
-  }, [dataredux]);
-
   async function getdata(from, to, date) {
+   console.log(from, to, date);
     try {
-      const res = await axios.post("https://swamitravels-bbxl.onrender.com/bus/getall", {
+      let res = await axios.post("https://swamitravels-bbxl.onrender.com/bus/getall", {
         from,
         to,
         date,
       });
-      if (res.data.length === 0) {
+       console.log(res.data);
+      // console.log("jihii",res.data);
+      if(res.data.length===0) {  
         error("Cities Not Found. Try with other routes");
-        return navigate("/");
+        return navigate("/")
       }
-      dispatch(saveDatafilter(res.data));
+      const filteredBuses = res.data.filter((bus) => {
+        return bus.from === from && bus.to === to;
+      });   
+      dispatch(saveDatafilter(filteredBuses));
       setwentwrong(false);
     } catch (error) {
       console.log(error.message);
       setwentwrong(true);
     }
   }
-
-  function applyFilters() {
-    if (!dataredux) return;
-    // Apply filters based on filter data
-    const filteredBuses = dataredux.filter((bus) => {
-      // Example filter logic: check if bus type matches selected filters
-      return (
-        (!bus.SEATER || bus.aminites.includes("SEATER")) &&
-        (!bus.SLEEPER || bus.aminites.includes("SLEEPER")) &&
-        (!bus.AC || bus.aminites.includes("AC")) &&
-        (!bus.NONAC || bus.aminites.includes("NONAC"))
-      );
-    });
-    setFilteredData(filteredBuses);
-  }
-
   async function handlebook(ele) {
     navigate({
       pathname: `/bookticket/${ele._id}`,
       search: `?&date=${searchParams.get("date")}`,
     });
   }
-
   return (
     <>
       {wentwrong ? (
@@ -101,7 +88,7 @@ function SelectBus() {
             <hr />
           </div>
           <div className={styles.busdata}>
-            {filteredData.map((ele, i) => {
+            {dataredux?.map((ele, i) => {
               return (
                 <div key={i}>
                   <h5>
@@ -129,7 +116,6 @@ function SelectBus() {
                   <hr />
                   <h6>Arrival Time : {ele.arrival}</h6>
                   <h6>Departure Time : {ele.departure}</h6>
-                  <h6>Aminites : {ele.aminites}</h6>
                   <hr />
                   <h6>Email : {ele.email}</h6>
                   <h6>Phone : {ele.phone}</h6>
