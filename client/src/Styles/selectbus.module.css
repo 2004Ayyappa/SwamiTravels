@@ -25,7 +25,7 @@
     rgba(0, 0, 0, 0.464) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   padding: 10px;
   border-radius: 10px;
-  background-image:url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg')
+  background-image:url('../Images/ticketbg.jpg')
 }
 .busdata > div > button {
   background-color: #1446a0;
