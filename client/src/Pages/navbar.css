@@ -4,7 +4,7 @@
     box-shadow: rgba(0, 0, 0, 0.342) 0px 54px 55px,
     rgba(0, 0, 0, 0.593) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.219) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    background-image: url('https://t4.ftcdn.net/jpg/04/04/40/49/240_F_404404954_WGYZtTwswIrXnJl6qVeEFK5UWPFflVB8.jpg');
+    background-image: url('../Images/240_F_404404954_WGYZtTwswIrXnJl6qVeEFK5UWPFflVB8.jpg');
 }
 .navbar-expand-lg {
     flex-wrap: nowrap;
