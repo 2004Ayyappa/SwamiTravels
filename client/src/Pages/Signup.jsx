@@ -1,22 +1,18 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../Styles/login.module.css";
-
 import axios from "axios";
 import { error, success } from "../Utils/notification";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-
 function Signup() {
   const initialData = {
     email: "",
     password: "",
     gender: "",
   };
- 
   const [signUpcreds, setsignUpcreds] = useState(initialData);
   const [showpassword, setshowpassword] = useState(false);
   const navigate = useNavigate();
-
   const hanldeChange = (e) => {
     const { name, value } = e.target;
     setsignUpcreds({
