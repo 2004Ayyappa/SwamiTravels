@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   const fetchUserCount = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/user/count");
+      const response = await axios.get("https://swamitravels-bbxl.onrender.com/user/count");
       setUserCount(response.data.count);
     } catch (error) {
       console.error("Error fetching user count:", error);
@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   const fetchBusCount = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/bus/count");
+      const response = await axios.get("https://swamitravels-bbxl.onrender.com/bus/count");
       setBusCount(response.data.count);
     } catch (error) {
       console.error("Error fetching bus count:", error);
@@ -38,7 +38,7 @@ const Dashboard = () => {
 
   const fetchCityCount = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/city/count");
+      const response = await axios.get("https://swamitravels-bbxl.onrender.com/city/count");
       setCityCount(response.data.count);
     } catch (error) {
       console.error("Error fetching city count:", error);
@@ -47,7 +47,7 @@ const Dashboard = () => {
 
   const fetchOrderCount = async () => {
     try {
-        const response = await axios.get("http://localhost:8080/order/count");
+        const response = await axios.get("https://swamitravels-bbxl.onrender.com/order/count");
         setOrderCount(response.data.count);
       } catch (error) {
         console.error("Error fetching city count:", error);
