@@ -14,7 +14,7 @@ const BusManagement = () => {
 
   const fetchAllBuses = async () => {
     try {
-      const response = await axios.get("https://swamitravels-bbxl.onrender.com/bus/getall");
+      const response = await axios.get("https://swamitravels-api.onrender.com/bus/getall");
       if (Array.isArray(response.data)) {
         setBuses(response.data);
       } else {
@@ -31,7 +31,7 @@ const BusManagement = () => {
 
   const handleUpdate = async (busId, updatedFields) => {
     try {
-      await axios.put(`https://swamitravels-bbxl.onrender.com/bus/update/${busId}`, updatedFields);
+      await axios.put(`https://swamitravels-api.onrender.com/bus/update/${busId}`, updatedFields);
       alert("Updated successfully");
       // Assuming the API updates the bus details successfully
       // You may want to handle the response based on your API implementation
@@ -45,7 +45,7 @@ const BusManagement = () => {
 
   const handleDelete = async (busId) => {
     try {
-      await axios.delete(`https://swamitravels-bbxl.onrender.com/bus/delete/${busId}`);
+      await axios.delete(`https://swamitravels-api.onrender.com/bus/delete/${busId}`);
       alert("Deleted Successfully");
       fetchAllBuses();
     } catch (err) {
