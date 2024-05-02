@@ -35,7 +35,7 @@ function Signup() {
     } else {
       try {
         let response = await axios.post(
-          "https://swamitravels-bbxl.onrender.com/admin/signup",
+          "https://swamitravels-api.onrender.com/admin/signup",
           signUpcreds
         );
         //console.log(response);
