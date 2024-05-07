@@ -79,7 +79,7 @@ function Details() {
     }
 
     const { data } = await axios.post(
-      "https://swamitravels-bbxl.onrender.com/api/payment/ticket",
+      "https://swamitravels-api.onrender.com/api/payment/ticket",
       {
         amount: amount,
       }
