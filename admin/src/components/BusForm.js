@@ -12,7 +12,7 @@ function BusForm() {
     price:'' ,
     email: '',
     phone: '',
-    aminites: '',
+    amenities: '',
     rating: '',
     arrival: '',
     departure: '',
@@ -49,7 +49,7 @@ function BusForm() {
           price: 0,
           email: '',
           phone: '',
-          aminites: '',
+          amenities: '',
           rating: 0,
           arrival: '',
           departure: '',
@@ -147,11 +147,10 @@ function BusForm() {
         <div className="form-group">
           <input
             type="text"
-            name="aminites"
-            placeholder="Aminites"
-            value={newBusData.aminites}
+            name="amenities"
+            placeholder="Amenities"
+            value={newBusData.amenities}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div className="form-group">
