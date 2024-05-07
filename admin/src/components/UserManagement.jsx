@@ -11,7 +11,7 @@ const UserManagement = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('https://swamitravels-bbxl.onrender.com/user/users');
+        const response = await axios.get('https://swamitravels-api.onrender.com/user/users');
         setUsers(response.data.data); // Assuming the users array is inside the `data` property of the response
         
         // Fetch booking counts for all users
@@ -32,7 +32,7 @@ const UserManagement = () => {
   // Function to fetch booking count for a user
   const fetchBookingCount = async (userId) => {
     try {
-      const response = await axios.get(`https://swamitravels-bbxl.onrender.com/order/count/${userId}`);
+      const response = await axios.get(`https://swamitravels-api.onrender.com/order/count/${userId}`);
       return response.data.count;
     } catch (error) {
       console.error('Error fetching booking count:', error);
@@ -43,7 +43,7 @@ const UserManagement = () => {
   // Function to handle user deletion
   const deleteUser = async (id) => {
     try {
-      const response = await axios.delete(`https://swamitravels-bbxl.onrender.com/user/deleteuser/${id}`);
+      const response = await axios.delete(`https://swamitravels-api.onrender.com/user/deleteuser/${id}`);
       setUsers(users.filter(user => user._id !== id));
       if (response.data.status === "Failed") {
         error(response.data.message);
