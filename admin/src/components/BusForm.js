@@ -3,17 +3,17 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Styles/BusManagement.css'; // Import CSS file for styling
 import DashboardLayout from './DashboardLayout';
-function BusForm() {
+ function BusForm() {
   const [buses, setBuses] = useState([]);
   const [newBusData, setNewBusData] = useState({
     companyname: '',
     from: '',
     to: '',
-    price:'' ,
+    price: 0,
     email: '',
     phone: '',
     amenities: '',
-    rating: '',
+    rating: 0,
     arrival: '',
     departure: '',
     seats: []
@@ -21,7 +21,6 @@ function BusForm() {
 
   useEffect(() => {
     fetchAllBuses();
-    
   }, []);
 
   const fetchAllBuses = async () => {
@@ -55,8 +54,6 @@ function BusForm() {
           departure: '',
           seats: []
         });
-        alert("Bus added successfully");
-        
       } else {
         console.error('Invalid response received from server:', response.data);
       }
@@ -64,133 +61,89 @@ function BusForm() {
       console.error('Error adding new bus:', error.message);
     }
   };
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewBusData({ ...newBusData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    addNewBus(); // Call addNewBus function to add the new bus
-  };
-
 
   return (
-  <DashboardLayout>
-    
-    <div >
-        <center>
-        <h2>Add New Buses</h2>
-        </center>
-      <form onSubmit={handleSubmit} className="new-bus-form">
-     
-        <div className="form-group">
-          <input
-            type="text"
-            name="companyname"
-            placeholder="Company Name"
-            value={newBusData.companyname}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="from"
-            placeholder="From"
-            value={newBusData.from}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="to"
-            placeholder="To"
-            value={newBusData.to}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="number"
-            name="price"
-            placeholder="Price"
-            value={newBusData.price}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            value={newBusData.email}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone"
-            value={newBusData.phone}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="amenities"
-            placeholder="Amenities"
-            value={newBusData.amenities}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="number"
-            name="rating"
-            placeholder="Rating"
-            value={newBusData.rating}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="arrival"
-            placeholder="Arrival Time"
-            value={newBusData.arrival}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="departure"
-            placeholder="Departure Time"
-            value={newBusData.departure}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+    <DashboardLayout>
+    <div>
+      <h2>Bus Management</h2>
 
-         
-<center><button type="submit">Add Bus</button>
-</center>
-      </form>
+      <h3>Add New Bus</h3>
+      <input
+        type="text"
+        placeholder="Company Name"
+        value={newBusData.companyname}
+        onChange={(e) => setNewBusData({ ...newBusData, companyname: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="From"
+        value={newBusData.from}
+        onChange={(e) => setNewBusData({ ...newBusData, from: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="To"
+        value={newBusData.to}
+        onChange={(e) => setNewBusData({ ...newBusData, to: e.target.value })}
+      />
+      <input
+        type="number"
+        placeholder="Price"
+        value={newBusData.price}
+        onChange={(e) => setNewBusData({ ...newBusData, price: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="Email"
+        value={newBusData.email}
+        onChange={(e) => setNewBusData({ ...newBusData, email: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="Phone"
+        value={newBusData.phone}
+        onChange={(e) => setNewBusData({ ...newBusData, phone: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="Amenities"
+        value={newBusData.amenities}
+        onChange={(e) => setNewBusData({ ...newBusData, amenities: e.target.value })}
+      />
+      <input
+        type="number"
+        placeholder="Rating"
+        value={newBusData.rating}
+        onChange={(e) => setNewBusData({ ...newBusData, rating: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="Arrival Time"
+        value={newBusData.arrival}
+        onChange={(e) => setNewBusData({ ...newBusData, arrival: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="Departure Time"
+        value={newBusData.departure}
+        onChange={(e) => setNewBusData({ ...newBusData, departure: e.target.value })}
+      />
+
+      {/* Other input fields for new bus data */}
+
+      <button onClick={addNewBus}>Add Bus</button>
+
+      <h3>All Buses</h3>
+      <ul>
+        {buses.map((bus) => (
+          <li key={bus._id}>
+            {bus.companyname} - {bus.from} to {bus.to}
+            {/* Display other bus details as needed */}
+          </li>
+        ))}
+      </ul>
     </div>
     </DashboardLayout>
   );
 }
-
 export default BusForm;
