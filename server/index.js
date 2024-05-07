@@ -10,6 +10,11 @@ const orderRouter = require("./src/controllers/order.controller");
 const paymentController = require("./src/controllers/payment.controller");
 const connect = require("./src/configs/db");
 app.use(cors());
+app.use(cors({
+  origin: 'https://swami-travels-admin.vercel.app',
+  methods: ['POST', 'GET','PUT','DELETE'],
+  credentials: true // Allow cookies and other credentials to be included in the request
+}));
 app.use(express.json());
 app.use("/admin", adminRouter);
 app.use("/user", userRouter);
