@@ -26,7 +26,7 @@ function BusForm() {
 
   const fetchAllBuses = async () => {
     try {
-      const response = await axios.post('https://swamitravels-bbxl.onrender.com/bus/getall');
+      const response = await axios.post('https://swamitravels-api.onrender.com/bus/getall');
       if (Array.isArray(response.data)) {
         setBuses(response.data);
       } else {
@@ -39,7 +39,7 @@ function BusForm() {
 
   const addNewBus = async () => {
     try {
-      const response = await axios.post('https://swamitravels-bbxl.onrender.com/bus/addnew', newBusData);
+      const response = await axios.post('https://swamitravels-api.onrender.com/bus/addnew', newBusData);
       if (response.data && typeof response.data === 'object') {
         setBuses([...buses, response.data]);
         setNewBusData({
