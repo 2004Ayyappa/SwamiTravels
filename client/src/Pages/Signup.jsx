@@ -39,7 +39,7 @@ function Signup() {
     } else {
       try {
         let response = await axios.post(
-          "https://swamitravels-bbxl.onrender.com/user/signup",
+          "https://swamitravels-api.onrender.com/user/signup",
           signUpcreds
         );
         //console.log(response);wa
