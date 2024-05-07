@@ -31,7 +31,7 @@ function Bookseat() {
   async function getdata() {
     // console.log(param.id);
     try {
-      let res = await axios.post("https://swamitravels-bbxl.onrender.com/bus/one", {
+      let res = await axios.post("https://swamitravels-api.onrender.com/bus/one", {
         id: param.id,
       });
       // console.log("OK", res.data);
