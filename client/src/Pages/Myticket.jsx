@@ -27,7 +27,7 @@ function Myticket() {
 
   async function getdata(id) {
     try {
-      let res = await axios.post("https://swamitravels-bbxl.onrender.com/order/myticket", {
+      let res = await axios.post("https://swamitravels-api.onrender.com/order/myticket", {
         id,
       });
       // console.log(res);
@@ -46,7 +46,7 @@ function Myticket() {
   async function getdataToday() {
     let id = Cookies.get("userid");
     try {
-      let res = await axios.post("https://swamitravels-bbxl.onrender.com/order/myticket/today", {
+      let res = await axios.post("https://swamitravels-api.onrender.com/order/myticket/today", {
         id,
       });
       // console.log("today", res);
@@ -67,7 +67,7 @@ function Myticket() {
     let id = Cookies.get("userid");
     try {
       let res = await axios.post(
-        "https://swamitravels-bbxl.onrender.com/order/myticket/upcoming",
+        "https://swamitravels-api.onrender.com/order/myticket/upcoming",
         {
           id,
         }
@@ -88,7 +88,7 @@ function Myticket() {
   async function getdataPast() {
     let id = Cookies.get("userid");
     try {
-      let res = await axios.post("https://swamitravels-bbxl.onrender.com/order/myticket/past", {
+      let res = await axios.post("https://swamitravels-api.onrender.com/order/myticket/past", {
         id,
       });
       // console.log("past", res);
@@ -109,7 +109,7 @@ function Myticket() {
     let userid1 = Cookies.get("userid");
     try {
       let res = await axios.delete(
-        `https://swamitravels-bbxl.onrender.com/order/oneorder/:${userid}`
+        `https://swamitravels-api.onrender.com/order/oneorder/:${userid}`
       );
       getdata(userid1);
       success("Ticket Cancelled Successfully");
