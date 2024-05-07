@@ -39,7 +39,7 @@ function SelectBus() {
   async function getdata(from, to, date) {
    console.log(from, to, date);
     try {
-      let res = await axios.post("https://swamitravels-bbxl.onrender.com/bus/getall", {
+      let res = await axios.post("https://swamitravels-api.onrender.com/bus/getall", {
         from,
         to,
         date,
